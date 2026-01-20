@@ -1,6 +1,6 @@
 import List from "./List";
 
-export default function Lists({ lists, setLists, filter }) {
+export default function ListsTable({ lists, setLists, filter }) {
   const deleteButton = (deleteId) => {
     setLists(lists.filter((list) => deleteId !== list.id));
   };

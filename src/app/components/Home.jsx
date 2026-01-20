@@ -1,11 +1,10 @@
-"use client";
-
 import { useState } from "react";
 import Footer from "./FooterSection";
 import Lists from "./ListsTable";
 import InputBar from "./InputBar";
 import FilterableCategory from "./FilterableCategory";
 import SummarySection from "./SummarySection";
+import ListsTable from "./ListsTable";
 
 export default function Home() {
   const [value, setValue] = useState("");
@@ -36,7 +35,7 @@ export default function Home() {
 
       <FilterableCategory onChangeFilter={setFilter} />
 
-      <Lists lists={lists} setLists={setLists} filter={filter} />
+      <ListsTable lists={lists} setLists={setLists} filter={filter} />
 
       <SummarySection lists={lists} setLists={setLists} />
 
