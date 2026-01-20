@@ -1,6 +1,7 @@
 import { useState } from "react";
+
+import { ToastContainer, toast } from "react-toastify";
 import Footer from "./FooterSection";
-import Lists from "./ListsTable";
 import InputBar from "./InputBar";
 import FilterableCategory from "./FilterableCategory";
 import SummarySection from "./SummarySection";
@@ -16,6 +17,12 @@ export default function Home() {
   };
 
   const addTasks = () => {
+    if (!value) {
+      toast.error("Pleave Provide Value", { position: "top-right" });
+      return;
+    } else {
+      toast.success("Item Added To The List", { position: "top-right" });
+    }
     if (value.trim() !== "") {
       setLists((prevLists) => [
         ...prevLists,
@@ -40,6 +47,7 @@ export default function Home() {
       <SummarySection lists={lists} setLists={setLists} />
 
       <Footer />
+      <ToastContainer />
     </div>
   );
 }

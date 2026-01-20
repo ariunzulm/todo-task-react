@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 export default function SummarySection({ lists, setLists }) {
   const updateCount = () => {
     const completedTasks = lists.filter((list) => !list.isComplete);
@@ -5,6 +6,7 @@ export default function SummarySection({ lists, setLists }) {
   };
 
   const clearCompleted = () => {
+    toast.info("Completed Items Deleted", { position: "top-right" });
     setLists(lists.filter((list) => !list.isComplete));
   };
 

@@ -1,7 +1,9 @@
+import { toast } from "react-toastify";
 import List from "./List";
 
 export default function ListsTable({ lists, setLists, filter }) {
   const deleteButton = (deleteId) => {
+    toast.info("Item Deleted", { position: "top-right" });
     setLists(lists.filter((list) => deleteId !== list.id));
   };
   const toggleList = (toggleId) => {
